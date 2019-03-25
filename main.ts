@@ -71,6 +71,7 @@ namespace BitCar {
     //% blockId=standup_still
     //% block="BitCar stand up: speed $speed \\% charge$charge|(ms)"
     //% speed.defl=100
+    //% speed.min=0 speed.max=100
     //% charge.defl=250
     export function standup_still(speed: number, charge: number) {
         move(-speed, -speed);
