@@ -64,31 +64,19 @@ namespace BitCar {
         pins.analogWritePin(R_forward, 0);
     }
 
-    /**
-    * When BitCar is still, make it stand up from the ground, try to tweak or increase the charge time(ms) if it failed to arises
-    */
-    //% blockId=standup_still
-    //% block="BitCar stand up, charge time $charge|(ms)"
-    //% charge.defl=250
-    export function standup_still(charge: number) {
-        move(-100, -100);
-        basic.pause(200);
-        move(100, 100);
-        basic.pause(charge);
-    }
 
     /**
-    * When BitCar is moving, make it stand up from the ground (when it's still), try to tweak or increase the charge time(ms) if it failed to arises
+    * When BitCar is still, make it stand up from the ground and then stay still, try to tweak the motor speed and the charge time if it failed
     */
-    //% blockId=standup_moving
-    //% block="BitCar stand up on the move, charge time $charge|(ms)"
+    //% blockId=standup_still
+    //% block="BitCar stand up: $speed|% $charge|(ms)"
+    //% speed.defl=100
     //% charge.defl=250
-    export function standup_moving(charge: number) {
-        stop();
-        basic.pause(300);
-        move(-100, -100);
+    export function standup_still(speed: number, charge: number) {
+        move(-speed, -speed);
         basic.pause(200);
-        move(100, 100);
+        move(speed, speed);
         basic.pause(charge);
+        stop();
     }
 }
