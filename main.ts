@@ -15,6 +15,12 @@ enum trick {
     R_forward = AnalogPin.P16,
 }
 
+enum IRLineSensor {
+    //% block="left"
+    left,
+    //% block=" right"
+    right
+}
 
 /**
  * Provides access to BitCar blocks for micro: bit functionality.
@@ -64,9 +70,8 @@ namespace BitCar {
         pins.analogWritePin(R_forward, 0);
     }
 
-
     /**
-    * When BitCar is still, make it stand up from the ground and then stop, try to tweak the motor speed and the charge time if it failed
+    * When BitCar is still, make it stand up from the ground and then stop, try to tweak the motor speed and the charge time if it failed to do so
     */
     //% blockId=standup_still
     //% block="BitCar stand up: speed $speed \\% charge$charge|(ms)"
@@ -79,5 +84,26 @@ namespace BitCar {
         move(speed, speed);
         basic.pause(charge);
         stop();
+    }
+
+
+    /**
+    * Check the state of the IR line sensor, the LED indicator is ON if the line is detected by the corresponding sensor
+    */
+    //% blockId=linesensor
+    //% block="BitCar: read line rensor $line|"
+    export function linesensor(line: IRLineSensor): boolean {
+        let result: boolean = false;
+
+        if (line == IRLineSensor.left) {
+            if (pins.analogReadPin(AnalogPin.P1) < 500) {
+                result = true;
+            }
+        } else if (line == IRLineSensor.right) {
+            if (pins.analogReadPin(AnalogPin.P2) < 500) {
+                result = true;
+            }
+        }
+        return result;
     }
 }
