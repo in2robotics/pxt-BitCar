@@ -69,7 +69,7 @@ namespace BitCar {
     * When BitCar is still, make it stand up from the ground and then stay still, try to tweak the motor speed and the charge time if it failed
     */
     //% blockId=standup_still
-    //% block="BitCar stand up: $speed|% $charge|(ms)"
+    //% block="BitCar stand up: speed $speed|% charge$charge|(ms)"
     //% speed.defl=100
     //% charge.defl=250
     export function standup_still(speed: number, charge: number) {
