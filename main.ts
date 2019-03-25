@@ -42,14 +42,14 @@ namespace BitCar {
     //% left.shadow="speedPicker"
     //% right.shadow="speedPicker"
     export function move(left: number, right: number) {
-        if (left > 0) {
+        if (left >= 0) {
             pins.analogWritePin(L_backward, 0);
             pins.analogWritePin(L_forward, Math.map(left, 0, 100, 0, 1023));
         } else if (left < 0) {
             pins.analogWritePin(L_backward, Math.map(Math.abs(left), 0, 100, 0, 1023));
             pins.analogWritePin(L_forward, 0);
         }
-        if (right > 0) {
+        if (right >= 0) {
             pins.analogWritePin(R_backward, 0);
             pins.analogWritePin(R_forward, Math.map(right, 0, 100, 0, 1023));
         } else if (left < 0) {
