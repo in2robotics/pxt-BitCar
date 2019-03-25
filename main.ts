@@ -85,7 +85,7 @@ namespace BitCar {
     //% charge.defl=250
     export function standup_moving(charge: number) {
         stop();
-        basic.pause(200);
+        basic.pause(300);
         move(-100, -100);
         basic.pause(200);
         move(100, 100);
