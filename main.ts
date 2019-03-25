@@ -92,6 +92,7 @@ namespace BitCar {
     */
     //% blockId=linesensor
     //% block="BitCar: line under $sensor|"
+
     export function linesensor(sensor: IRLineSensor): boolean {
         let result: boolean = false;
 
