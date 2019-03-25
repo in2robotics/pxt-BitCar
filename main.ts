@@ -106,4 +106,31 @@ namespace BitCar {
         }
         return result;
     }
+
+    /**
+    * Line following at a specified speed.
+    */
+    //% blockId=linefollow
+    //% block="BitCar: follow line at speed"
+    //% speed.defl=50
+    //% speed.min=0 speed.max=100
+    export function linefollow(speed: number) {
+        if (BitCar.linesensor(IRLineSensor.left) && BitCar.linesensor(IRLineSensor.right)) {
+            BitCar.move(speed, speed)
+        } else {
+            if (!(BitCar.linesensor(IRLineSensor.left)) && BitCar.linesensor(IRLineSensor.right)) {
+                BitCar.move(speed, 0)
+                if (!(BitCar.linesensor(IRLineSensor.left)) && !(BitCar.linesensor(IRLineSensor.right))) {
+                    BitCar.move(speed, 0)
+                }
+            } else {
+                if (!(BitCar.linesensor(IRLineSensor.right)) && BitCar.linesensor(IRLineSensor.left)) {
+                    BitCar.move(0, speed)
+                    if (!(BitCar.linesensor(IRLineSensor.left)) && !(BitCar.linesensor(IRLineSensor.right))) {
+                        BitCar.move(0, speed)
+                    }
+                }
+            }
+        }
+    }
 }
