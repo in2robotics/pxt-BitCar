@@ -111,7 +111,7 @@ namespace BitCar {
     * Line following at a specified speed.
     */
     //% blockId=linefollow
-    //% block="BitCar: follow line at speed"
+    //% block="BitCar: follow line at speed $speed|"
     //% speed.defl=50
     //% speed.min=0 speed.max=100
     export function linefollow(speed: number) {
