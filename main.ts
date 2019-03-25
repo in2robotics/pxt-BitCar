@@ -62,4 +62,17 @@ namespace BitCar {
         pins.analogWritePin(R_forward, 0);
     }
 
+    /**
+    * BitCar trick: stand up from the ground
+    */
+    //% block="BitCar stand up"
+    //% left.shadow="speedPicker"
+    //% right.shadow="speedPicker"
+    export function standup() {
+        move(-100, -100);
+        basic.pause(300);
+        move(100, 100);
+        basic.pause(500);
+        stop();
+    }
 }
