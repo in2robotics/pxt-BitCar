@@ -63,16 +63,15 @@ namespace BitCar {
     }
 
     /**
-    * BitCar trick: stand up from the ground
+    * Make BitCar stand up from the ground, try to tweak or increase the charge time(ms) if it failed to arises
     */
-    //% block="BitCar stand up"
-    //% left.shadow="speedPicker"
-    //% right.shadow="speedPicker"
-    export function standup() {
+    //% block="BitCar stand up, charge time &charge|"
+    //% charge.defl=250
+    export function standup(charge:number) {
         move(-100, -100);
-        basic.pause(300);
+        basic.pause(200);
         move(100, 100);
-        basic.pause(500);
+        basic.pause(charge);
         stop();
     }
 }
