@@ -65,7 +65,7 @@ namespace BitCar {
     /**
     * Make BitCar stand up from the ground, try to tweak or increase the charge time(ms) if it failed to arises
     */
-    //% block="BitCar stand up, charge time $charge|"
+    //% block="BitCar stand up, charge time $charge|(ms)"
     //% charge.defl=250
     export function standup(charge: number) {
         move(-100, -100);
