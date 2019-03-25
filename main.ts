@@ -16,9 +16,9 @@ enum trick {
 }
 
 enum IRLineSensor {
-    //% block="left"
+    //% block="left sensor"
     left,
-    //% block=" right"
+    //% block=" right sensor"
     right
 }
 
@@ -91,15 +91,15 @@ namespace BitCar {
     * Check the state of the IR line sensor, the LED indicator is ON if the line is detected by the corresponding sensor
     */
     //% blockId=linesensor
-    //% block="BitCar: read line rensor $line|"
-    export function linesensor(line: IRLineSensor): boolean {
+    //% block="BitCar: line under $sensor|"
+    export function linesensor(sensor: IRLineSensor): boolean {
         let result: boolean = false;
 
-        if (line == IRLineSensor.left) {
+        if (sensor == IRLineSensor.left) {
             if (pins.analogReadPin(AnalogPin.P1) < 500) {
                 result = true;
             }
-        } else if (line == IRLineSensor.right) {
+        } else if (sensor == IRLineSensor.right) {
             if (pins.analogReadPin(AnalogPin.P2) < 500) {
                 result = true;
             }
