@@ -68,10 +68,11 @@ namespace BitCar {
     //% block="BitCar stand up, charge time $charge|(ms)"
     //% charge.defl=250
     export function standup(charge: number) {
+        stop();
+        basic.pause(50);
         move(-100, -100);
         basic.pause(200);
         move(100, 100);
         basic.pause(charge);
-        stop();
     }
 }
