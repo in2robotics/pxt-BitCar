@@ -91,7 +91,8 @@ namespace BitCar {
     * Check the state of the IR line sensor, the LED indicator is ON if the line is detected by the corresponding sensor
     */
     //% blockId=linesensor
-    //% block="BitCar: line detected $sensor|"
+    //% block="BitCar: line under $sensor|"
+
     export function linesensor(sensor: IRLineSensor): boolean {
         let result: boolean = false;
 
