@@ -31,6 +31,7 @@ namespace BitCar {
     /**
     * Set the motors' speed of BitCar
     */
+    //% blockId=move
     //% block="BitCar left motor $left \\%, right motor$right \\%"
     //% left.shadow="speedPicker"
     //% right.shadow="speedPicker"
@@ -54,6 +55,7 @@ namespace BitCar {
     /**
     * BitCar stop
     */
+    //% blockId=stop
     //% block="BitCar stop"
     export function stop() {
         pins.analogWritePin(L_backward, 0);
@@ -63,13 +65,27 @@ namespace BitCar {
     }
 
     /**
-    * Make BitCar stand up from the ground, try to tweak or increase the charge time(ms) if it failed to arises
+    * When BitCar is still, make it stand up from the ground, try to tweak or increase the charge time(ms) if it failed to arises
     */
+    //% blockId=standup_still
     //% block="BitCar stand up, charge time $charge|(ms)"
     //% charge.defl=250
-    export function standup(charge: number) {
+    export function standup_still(charge: number) {
+        move(-100, -100);
+        basic.pause(200);
+        move(100, 100);
+        basic.pause(charge);
+    }
+
+    /**
+    * When BitCar is moving, make it stand up from the ground (when it's still), try to tweak or increase the charge time(ms) if it failed to arises
+    */
+    //% blockId=standup_moving
+    //% block="BitCar stand up on the move, charge time $charge|(ms)"
+    //% charge.defl=250
+    export function standup_moving(charge: number) {
         stop();
-        basic.pause(50);
+        basic.pause(200);
         move(-100, -100);
         basic.pause(200);
         move(100, 100);
