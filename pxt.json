@@ -5,7 +5,7 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "chmakered-grove": "github:MiroChao/pxt-CHMakerEd-Grove",
+        "chmakered-grove": "github:MiroChao/pxt-CHMakerEd-Grove#v0.0.5",
         "neopixel": "github:microsoft/pxt-neopixel#v0.6.10"
     },
     "files": [
