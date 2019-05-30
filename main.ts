@@ -126,7 +126,7 @@ namespace BitCar {
             } else {
                 if (!(linesensor(IRLineSensor.right)) && linesensor(IRLineSensor.left)) {
                     move(0, speed);
-                    if (!(BitCar.linesensor(IRLineSensor.left)) && !(BitCar.linesensor(IRLineSensor.right))) {
+                    if (!(linesensor(IRLineSensor.left)) && !(linesensor(IRLineSensor.right))) {
                         move(0, speed);
                     }
                 }
