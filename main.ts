@@ -31,8 +31,8 @@ namespace BitCar {
 
     let L_backward = AnalogPin.P13;
     let L_forward = AnalogPin.P14;
-    let R_backward = AnalogPin.P15;
-    let R_forward = AnalogPin.P16;
+    let R_forward = AnalogPin.P15; 
+    let R_backward = AnalogPin.P16;
 
     /**
     * Set the motors' speed of BitCar
@@ -52,7 +52,7 @@ namespace BitCar {
         if (right >= 0) {
             pins.analogWritePin(R_backward, 0);
             pins.analogWritePin(R_forward, Math.map(right, 0, 100, 0, 1023));
-        } else if (left < 0) {
+        } else if (right < 0) {
             pins.analogWritePin(R_backward, Math.map(Math.abs(right), 0, 100, 0, 1023));
             pins.analogWritePin(R_forward, 0);
         }
