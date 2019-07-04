@@ -38,7 +38,7 @@ namespace BitCar {
     * Set the motors' speed of BitCar
     */
     //% blockId=move
-    //% block="BitCar left motor $left \\%, right motor$right \\%"
+    //% block="BitCar: left motor $left \\%, right motor$right \\%"
     //% left.shadow="speedPicker"
     //% right.shadow="speedPicker"
     export function move(left: number, right: number) {
@@ -62,7 +62,7 @@ namespace BitCar {
     * BitCar stop
     */
     //% blockId=stop
-    //% block="BitCar stop"
+    //% block="BitCar: stop"
     export function stop() {
         pins.analogWritePin(L_backward, 0);
         pins.analogWritePin(L_forward, 0);

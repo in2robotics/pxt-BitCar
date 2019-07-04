@@ -1,0 +1,7 @@
+{
+    "BitCar.move": "Set the motors' speed of BitCar",
+    "BitCar.stop": "BitCar stop",
+    "BitCar.standup_still": "When BitCar is still, make it stand up from the ground and then stop, try to tweak the motor speed and the charge time if it failed to do so",
+    "BitCar.linesensor": "Check the state of the IR line sensor, the LED indicator is ON if the line is detected by the corresponding sensor",
+    "BitCar.linefollow": "Line following at a specified speed."
+}

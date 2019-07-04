@@ -1,20 +1,21 @@
 {
     "name": "pxt-bitcar",
-    "version": "0.0.1",
-    "description": "",
+    "version": "0.0.0",
+    "description": "The BitCar extension for micro:bit",
+    "license": "MIT",
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "chmakered-grove": "github:CH-MAKER-Ed/pxt-Grove-One#v0.0.2",
+        "chmakered-grove": "github:CH-MAKER-Ed/pxt-Grove",
         "neopixel": "github:microsoft/pxt-neopixel#v0.6.10"
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "_locales/zh/bitcar-strings.json"
     ],
     "testFiles": [
         "test.ts"
     ],
-    "public": false,
-    "installedVersion": "workspace:bda52e04-fd68-4897-6612-a91523a7b7c4"
+    "public": true
 }
