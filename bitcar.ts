@@ -3,6 +3,36 @@
 * | Developer   :   CH Makered
 * | More Info   :	http://chmakered.com/
 ******************************************************************************/
+enum GrovePin {
+    //% block="P0"
+    P0 = DigitalPin.P0,
+    //% block="P1"
+    P1 = DigitalPin.P1,
+    //% block="P2"
+    P2 = DigitalPin.P2,
+    //% block="P8"
+    P8 = DigitalPin.P8,
+    //% block="P12"
+    P12 = DigitalPin.P12,
+    //% block="P16"
+    P16 = DigitalPin.P16
+}
+
+enum GroveAnalogPin {
+    //% block="P0"
+    P0 = AnalogPin.P0,
+    //% block="P1"
+    P1 = AnalogPin.P1,
+    //% block="P2"
+    P2 = AnalogPin.P2
+}
+
+enum DistanceUnit {
+    //% block="cm"
+    cm,
+    //% block="inch"
+    inch
+}
 
 enum trick {
     //% block="arise"
@@ -26,7 +56,7 @@ enum IRLineSensor {
  * Provides access to BitCar blocks for micro: bit functionality.
  */
 //% color=190 icon="\uf126" block= "BitCar"
-//% groups="['Analog', 'Digital', 'I2C', 'Grove Modules']"
+//% groups="['BitCar Control', 'Sensors']"
 namespace BitCar {
 
     let L_backward = AnalogPin.P13;
@@ -41,6 +71,8 @@ namespace BitCar {
     //% block="BitCar: left motor $left \\%, right motor$right \\%"
     //% left.shadow="speedPicker"
     //% right.shadow="speedPicker"
+    //% group="BitCar Control"
+    //% weight=100
     export function move(left: number, right: number) {
         if (left >= 0) {
             pins.analogWritePin(L_backward, 0);
@@ -63,6 +95,9 @@ namespace BitCar {
     */
     //% blockId=stop
     //% block="BitCar: stop"
+    //% group="BitCar Control"
+    //% weight=99
+    //% blockGap=40
     export function stop() {
         pins.analogWritePin(L_backward, 0);
         pins.analogWritePin(L_forward, 0);
@@ -78,6 +113,9 @@ namespace BitCar {
     //% speed.defl=100
     //% speed.min=0 speed.max=100
     //% charge.defl=250
+    //% group="BitCar Control"
+    //% weight=98
+    //% blockGap=40
     export function standup_still(speed: number, charge: number) {
         move(-speed, -speed);
         basic.pause(200);
@@ -92,6 +130,8 @@ namespace BitCar {
     */
     //% blockId=linesensor
     //% block="BitCar: line under $sensor|"
+    //% group="BitCar Control"
+    //% weight=97
     export function linesensor(sensor: IRLineSensor): boolean {
         let result: boolean = false;
 
@@ -114,6 +154,8 @@ namespace BitCar {
     //% block="BitCar: follow line at speed $speed \\%"
     //% speed.defl=50
     //% speed.min=0 speed.max=100
+    //% group="BitCar Control"
+    //% weight=96
     export function linefollow(speed: number) {
         if (linesensor(IRLineSensor.left) && linesensor(IRLineSensor.right)) {
             move(speed, speed);
@@ -132,5 +174,36 @@ namespace BitCar {
                 }
             }
         }
+    }
+
+    /**
+    * Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
+    */
+    //% blockId=grove_ultrasonic
+    //% block="Ultrasonic Sensor $groveport|: distance in $Unit"
+    //% group="Sensors"
+    //% weight=100
+    export function grove_ultrasonic(groveport: GrovePin, Unit: DistanceUnit): number {
+        let duration = 0;
+        let distance = 0;
+        let distanceBackup = 0;
+        let port: number = groveport;
+
+        pins.digitalWritePin(<DigitalPin>port, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(<DigitalPin>port, 1);
+        control.waitMicros(10);
+        pins.digitalWritePin(<DigitalPin>port, 0);
+
+        duration = pins.pulseIn(<DigitalPin>port, PulseValue.High, 50000);
+
+        if (Unit == DistanceUnit.cm) distance = duration * 153 / 58 / 100;
+        else distance = duration * 153 / 148 / 100;
+
+        if (distance > 0) distanceBackup = distance;
+        else distance = distanceBackup;
+        basic.pause(50);
+
+        return distance;
     }
 }

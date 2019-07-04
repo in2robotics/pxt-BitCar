@@ -6,13 +6,12 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "chmakered-grove": "github:CH-MAKER-Ed/pxt-Grove",
         "neopixel": "github:microsoft/pxt-neopixel#v0.6.10"
     },
     "files": [
         "README.md",
-        "main.ts",
-        "_locales/zh/bitcar-strings.json"
+        "bitcar.ts",
+        "_locales/zh/pxt-bitcar-strings.json"
     ],
     "testFiles": [
         "test.ts"
