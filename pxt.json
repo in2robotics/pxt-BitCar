@@ -11,7 +11,8 @@
     "files": [
         "README.md",
         "bitcar.ts",
-        "_locales/zh/pxt-bitcar-strings.json"
+        "_locales/zh/pxt-bitcar-strings.json",
+        "_locales/zh/pxt-bitcar-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
