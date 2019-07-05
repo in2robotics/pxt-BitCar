@@ -1,7 +1,7 @@
 {
   "BitCar.grove_ultrasonic|block": "超声波测距传感器 $groveport|: 距离 $Unit",
-  "BitCar.linefollow|block": "BitCar: $sensor|传感器检测到线",
-  "BitCar.linesensor|block": "BitCar: 以速度 $speed \\%巡线",
+  "BitCar.linefollow|block": "BitCar: 以速度 $speed \\% 巡线",
+  "BitCar.linesensor|block": "BitCar: $sensor| 传感器检测到线",
   "BitCar.move|block": "BitCar: 左轮速度 $left \\%, 右轮速度 $right \\%",
   "BitCar.standup_still|block": "BitCar: 以 $speed \\% 速度冲刺站立 冲刺时间$charge|(ms)",
   "BitCar.stop|block": "BitCar: 停止运动",
