@@ -199,7 +199,7 @@ namespace BitCar {
         if (Unit == DistanceUnit.cm) distance = duration * 153 / 58 / 100;
         else distance = duration * 153 / 148 / 100;
         basic.pause(50);
-        if (distance > 0) return distance;
+        if (distance > 0) return Math.floor(distance * 10) / 10;
         else return 350;
     }
 }
