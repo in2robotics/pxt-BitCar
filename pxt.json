@@ -1,6 +1,6 @@
 {
     "name": "pxt-bitcar",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "The BitCar extension for micro:bit",
     "license": "MIT",
     "dependencies": {
@@ -17,5 +17,9 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": true
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
 }

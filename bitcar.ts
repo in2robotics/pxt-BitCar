@@ -186,7 +186,6 @@ namespace BitCar {
     export function grove_ultrasonic(groveport: GrovePin, Unit: DistanceUnit): number {
         let duration = 0;
         let distance = 0;
-        let distanceBackup = 0;
         let port: number = groveport;
 
         pins.digitalWritePin(<DigitalPin>port, 0);
@@ -199,11 +198,8 @@ namespace BitCar {
 
         if (Unit == DistanceUnit.cm) distance = duration * 153 / 58 / 100;
         else distance = duration * 153 / 148 / 100;
-
-        if (distance > 0) distanceBackup = distance;
-        else distance = distanceBackup;
         basic.pause(50);
-
-        return distance;
+        if (distance > 0) return Math.floor(distance * 10) / 10;
+        else return 350;
     }
 }
