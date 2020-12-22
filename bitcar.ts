@@ -202,4 +202,30 @@ namespace BitCar {
         if (distance > 0) return Math.floor(distance * 10) / 10;
         else return 350;
     }
+    /**
+    * Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
+    */
+    //% blockId=grove_ultrasonic_v2
+    //% block="(V2)Ultrasonic Sensor $groveport|: distance in $Unit"
+    //% group="Sensors"
+    //% weight=99
+    export function grove_ultrasonic_v2(groveport: GrovePin, Unit: DistanceUnit): number {
+        let duration = 0;
+        let distance = 0;
+        let port: number = groveport;
+
+        pins.digitalWritePin(<DigitalPin>port, 0);
+        control.waitMicros(2);
+        pins.digitalWritePin(<DigitalPin>port, 1);
+        control.waitMicros(10);
+        pins.digitalWritePin(<DigitalPin>port, 0);
+
+        duration = pins.pulseIn(<DigitalPin>port, PulseValue.High, 50000);
+
+        if (Unit == DistanceUnit.cm) distance = duration * 153 / 88 / 100;
+        else distance = duration * 153 / 226 / 100;
+        basic.pause(50);
+        if (distance > 0) return Math.floor(distance * 10) / 10;
+        else return 350;
+    }
 }
