@@ -101,7 +101,7 @@ enum IRLineSensor {
  * Provides access to BitCar blocks for micro: bit functionality.
  */
 //% color=190 icon="\uf126" block= "BitCar"
-//% groups="['BitCar Control', 'Sensors','BitPlayer']"
+//% groups="['BitCar','BitPlayer']"
 namespace BitCar {
 
     let L_backward = AnalogPin.P13;
@@ -116,8 +116,8 @@ namespace BitCar {
     //% block="BitCar: left motor $left \\%, right motor$right \\%"
     //% left.shadow="speedPicker"
     //% right.shadow="speedPicker"
-    //% group="BitCar Control"
-    //% weight=100
+    //% group="BitCar"
+    //% weight=1000
     export function move(left: number, right: number) {
         if (left >= 0) {
             pins.analogWritePin(L_backward, 0);
@@ -140,8 +140,8 @@ namespace BitCar {
     */
     //% blockId=stop
     //% block="BitCar: stop"
-    //% group="BitCar Control"
-    //% weight=99
+    //% group="BitCar"
+    //% weight=900
     //% blockGap=40
     export function stop() {
         pins.analogWritePin(L_backward, 0);
@@ -158,8 +158,8 @@ namespace BitCar {
     //% speed.defl=100
     //% speed.min=0 speed.max=100
     //% charge.defl=250
-    //% group="BitCar Control"
-    //% weight=98
+    //% group="BitCar"
+    //% weight=800
     //% blockGap=40
     export function standup_still(speed: number, charge: number) {
         move(-speed, -speed);
@@ -175,21 +175,20 @@ namespace BitCar {
     */
     //% blockId=linesensor
     //% block="BitCar: line under $sensor|"
-    //% group="BitCar Control"
-    //% weight=97
-    export function linesensor(sensor: IRLineSensor): boolean {
-        let result: boolean = false;
+    //% group="BitCar"
+    //% weight=700 
+    export function linesensor(sensor: IRLineSensor){
+        let result = false;
 
         if (sensor == IRLineSensor.left) {
             if (pins.analogReadPin(AnalogPin.P1) < 500) {
                 result = true;
             }
         } else if (sensor == IRLineSensor.right) {
-            if (pins.analogReadPin(AnalogPin.P2) < 500) {
+            if (pins.analogReadPin(AnalogPin.P2) < 500) { 
                 result = true;
             }
         }
-        return result;
     }
 
     /**
@@ -199,8 +198,8 @@ namespace BitCar {
     //% block="BitCar: follow line at speed $speed \\%"
     //% speed.defl=50
     //% speed.min=0 speed.max=100
-    //% group="BitCar Control"
-    //% weight=96
+    //% group="BitCar"
+    //% weight=600
     export function linefollow(speed: number) {
         if (linesensor(IRLineSensor.left) && linesensor(IRLineSensor.right)) {
             move(speed, speed);
@@ -222,12 +221,12 @@ namespace BitCar {
     }
 
     /**
-    * (For mircro:bit V2 ONLY)Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
+    * Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
     */
     //% blockId=grove_ultrasonic
     //% block="Ultrasonic Sensor $groveport|: distance in $Unit"
-    //% group="Sensors"
-    //% weight=100
+    //% group="BitCar"
+    //% weight=500
     export function grove_ultrasonic(groveport: GrovePin, Unit: DistanceUnit): number {
         let duration = 0;
         let distance = 0;
@@ -248,12 +247,12 @@ namespace BitCar {
         else return 350;
     }
     /**
-    * Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
+    * (For mircro:bit V2 ONLY)Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
     */
     //% blockId=grove_ultrasonic_v2
     //% block="(V2)Ultrasonic Sensor $groveport|: distance in $Unit"
-    //% group="Sensors"
-    //% weight=99
+    //% group="BitCar"
+    //% weight=400
     export function grove_ultrasonic_v2(groveport: GrovePin, Unit: DistanceUnit): number {
         let duration = 0;
         let distance = 0;
@@ -299,6 +298,7 @@ namespace BitCar {
     //% blockId=OnKey
     //% block="on key $key| is $keyEvent"
     //% group="BitPlayer"
+    //% weight=20 
     export function OnKey(key: BitPlayerKey, keyEvent: BitPlayerKeyEvent, handler: Action) {
         if (!posi_init) {
             InitialPosition();
@@ -316,7 +316,7 @@ namespace BitCar {
     //% on.shadow="toggleOnOff"
     //% on.defl="true"
     //% group="BitPlayer"
-    //% weight=45
+    //% weight=10
     export function SetMotor(on: boolean) {
         if (on) {
             pins.digitalWritePin(DigitalPin.P8, 1);
@@ -402,6 +402,7 @@ namespace BitCar {
     //% blockId=KeyPressed
     //% block="key $key| is pressed"
     //% group="BitPlayer"
+    //% weight=30 
     export function KeyPressed(key: BitPlayerKey): boolean {
         if (!posi_init) {
             InitialPosition();
