@@ -224,7 +224,7 @@ namespace BitCar {
     * Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
     */
     //% blockId=grove_ultrasonic
-    //% block="Ultrasonic Sensor $groveport|: distance in $Unit"
+    //% block="BitCar: Ultrasonic Sensor $groveport|: distance in $Unit"
     //% group="BitCar"
     //% weight=500
     export function grove_ultrasonic(groveport: GrovePin, Unit: DistanceUnit): number {
@@ -250,7 +250,7 @@ namespace BitCar {
     * (For mircro:bit V2 ONLY)Get the distance from Grove-Ultrasonic Sensor, the measuring range is between 2-350cm
     */
     //% blockId=grove_ultrasonic_v2
-    //% block="(V2)Ultrasonic Sensor $groveport|: distance in $Unit"
+    //% block="BitCar: (V2)Ultrasonic Sensor $groveport|: distance in $Unit"
     //% group="BitCar"
     //% weight=400
     export function grove_ultrasonic_v2(groveport: GrovePin, Unit: DistanceUnit): number {
@@ -296,7 +296,7 @@ namespace BitCar {
      * Do something when a key is pressed, releassed or clicked
      */
     //% blockId=OnKey
-    //% block="on key $key| is $keyEvent"
+    //% block="BitPlater: on key $key| is $keyEvent"
     //% group="BitPlayer"
     //% weight=20 
     export function OnKey(key: BitPlayerKey, keyEvent: BitPlayerKeyEvent, handler: Action) {
@@ -312,7 +312,7 @@ namespace BitCar {
     * turn on of off the vibration motor
     */
     //% blockId=SetMotor
-    //% block="vibration $on|"
+    //% block="BitPlater: vibration $on|"
     //% on.shadow="toggleOnOff"
     //% on.defl="true"
     //% group="BitPlayer"
@@ -335,7 +335,7 @@ namespace BitCar {
     * @param position the current position of joystick
     */
     //% blockId=OnJoystick
-    //% block="joystick $position|"
+    //% block="BitPlater: joystick $position|"
     //% position.fieldEditor="gridpicker"
     //% position.fieldOptions.columns=3
     //% group="BitPlayer"
@@ -400,7 +400,7 @@ namespace BitCar {
     * @param key the pin that acts as a button
     */
     //% blockId=KeyPressed
-    //% block="key $key| is pressed"
+    //% block="BitPlater: key $key| is pressed"
     //% group="BitPlayer"
     //% weight=30 
     export function KeyPressed(key: BitPlayerKey): boolean {
