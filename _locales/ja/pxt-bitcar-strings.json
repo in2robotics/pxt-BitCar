@@ -6,7 +6,7 @@
   "BitCar.standup_still|block": "BitCar:  速度　$speed で時間$charge|(ms)で立ち上がる",
   "BitCar.stop|block": "BitCar: 停止运动",
   "BitCar|block": "BitCar",
-  "DistanceUnit.cm|block": "cm,
+  "DistanceUnit.cm|block": "cm",
   "DistanceUnit.inch|block": "inch",
   "GroveAnalogPin.P0|block": "P0",
   "GroveAnalogPin.P1|block": "P1",
