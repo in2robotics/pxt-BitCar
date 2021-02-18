@@ -4,7 +4,7 @@
   "BitCar.linesensor|block": "BitCar: $sensor| の線検知センサが線を検知していたら",
   "BitCar.move|block": "BitCar: モーター $left \\%, 右モーター $right で進む\\%",
   "BitCar.standup_still|block": "BitCar:  速度　$speed で時間$charge|(ms)で立ち上がる",
-  "BitCar.stop|block": "BitCar: 停止运动",
+  "BitCar.stop|block": "BitCar: 停止する",
   "BitCar|block": "BitCar",
   "DistanceUnit.cm|block": "cm",
   "DistanceUnit.inch|block": "inch",
