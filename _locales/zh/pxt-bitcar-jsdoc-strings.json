@@ -1,6 +1,7 @@
 {
   "BitCar": "Provides access to BitCar blocks for micro: bit functionality.",
   "BitCar.grove_ultrasonic": "获取 超声波测距传感器 在指定Grove接口上的值, 测距范围是 2-350cm",
+  "BitCar.grove_ultrasonic_v2": "( 仅适用于micro:bit V2) 获取 超声波测距传感器 的测距值，范围是 2-350厘米",
   "BitCar.linefollow": "以指定速度巡线",
   "BitCar.linesensor": "检查BitCar下方黑线与传感器的相对位置，当传感器检查到黑线时，对应的指示灯会亮起",
   "BitCar.move": "设置BitCar左右轮的速度",
