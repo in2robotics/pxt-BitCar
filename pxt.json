@@ -1,6 +1,6 @@
 {
     "name": "pxt-bitcar",
-    "version": "0.0.2",
+    "version": "0.1.1",
     "description": "The BitCar extension for micro:bit",
     "license": "MIT",
     "dependencies": {
