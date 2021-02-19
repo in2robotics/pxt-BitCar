@@ -1,14 +1,17 @@
 {
   "BitCar": "Provides access to BitCar blocks for micro: bit functionality.",
+  "BitCar.KeyPressed": "获取指定按键的状态(是否被按下)",
+  "BitCar.KeyPressed|param|key": "the pin that acts as a button",
+  "BitCar.OnJoystick": "检测摇杆是否被推向某个指定方向",
+  "BitCar.OnJoystick|param|position": "the current position of joystick",
+  "BitCar.OnKey": "当指定按键被单击、按下或松开时执行操作",
+  "BitCar.SetMotor": "打开或关闭振动马达",
   "BitCar.grove_ultrasonic": "获取 超声波测距传感器 在指定Grove接口上的值, 测距范围是 2-350cm",
   "BitCar.grove_ultrasonic_v2": "( 仅适用于micro:bit V2) 获取 超声波测距传感器 的测距值，范围是 2-350厘米",
-  "BitCar.linefollow": "以指定速度巡线",
+  "BitCar.linefollow": "以指定速度巡线.",
   "BitCar.linesensor": "检查BitCar下方黑线与传感器的相对位置，当传感器检查到黑线时，对应的指示灯会亮起",
   "BitCar.move": "设置BitCar左右轮的速度",
   "BitCar.standup_still": "让 BitCar 从静止的初始状态往前冲刺然后后退，利用惯性使其站立起来。如果无法实现站立，试着改变一下冲刺速度和冲刺时间",
   "BitCar.stop": "BitCar 停止运动",
-  "BitPlayer.OnKey": "当指定按键被单击、按下或松开时执行操作.",
-  "BitPlayer.KeyPressed": "获取指定按键的状态(是否被按下).",
-  "BitPlayer.SetMotor": "打开或关闭振动马达.",
-  "BitPlayer.OnJoystick": "获取摇杆的状态(是否被向某个方向推动)."
+  "GrovePin": "***************************************************************************\r\n| Description :\tBitCar extension for micro:bit\r\n| Developer   :   CH Makered\r\n| More Info   :\thttp://chmakered.com/\r\n****************************************************************************"
 }
