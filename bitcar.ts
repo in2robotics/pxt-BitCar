@@ -185,13 +185,13 @@ namespace BitCar {
                 result = true;
             }
             else
-                return false;
+                result = false;
         } else if (sensor == IRLineSensor.right) {
             if (pins.analogReadPin(AnalogPin.P2) < 500) { 
                 result = true;
             }
             else
-                return false;
+                result = false;
         }
 
         return result;
@@ -280,16 +280,6 @@ namespace BitCar {
     }
 
 
-    /**
-	 * 
-	 */
-    let posi_init = 0;
-
-    function InitialPosition(): void {
-        posi_init = 1;
-        return;
-    }
-
 
     /**
      * Do something when a key is pressed, released or clicked
@@ -299,9 +289,6 @@ namespace BitCar {
     //% group="BitPlayer"
     //% weight=20 
     export function OnKey(key: BitPlayerKey, keyEvent: BitPlayerKeyEvent, handler: Action) {
-        if (!posi_init) {
-            InitialPosition();
-        }
 
         control.onEvent(<number>key, <number>keyEvent, handler); // register handler
     }
@@ -402,9 +389,6 @@ namespace BitCar {
     //% group="BitPlayer"
     //% weight=30 
     export function KeyPressed(key: BitPlayerKey): boolean {
-        if (!posi_init) {
-            InitialPosition();
-        }
 
         const pin = <DigitalPin><number>key;
         pins.setPull(pin, PinPullMode.PullUp);
