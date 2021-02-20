@@ -288,7 +288,7 @@ namespace BitCar {
 	/**
 	 * 
 	 */
-    //% shim=bitplayer::init
+    //% shim=bitcar::init
     function init(): void {
         return;
     }
@@ -306,7 +306,7 @@ namespace BitCar {
         }
 
         init();
-        controll.onEvent(<number>key, <number>keyEvent, handler); // register handler
+        control.onEvent(<number>key, <number>keyEvent, handler); // register handler
     }
 
 
@@ -417,7 +417,7 @@ namespace BitCar {
     }
  
 
-    
+
 
     
 }
