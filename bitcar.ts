@@ -193,6 +193,8 @@ namespace BitCar {
             else
                 return false;
         }
+
+        return result;
     }
 
     /**
