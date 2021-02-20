@@ -293,10 +293,10 @@ namespace BitCar {
     }
 
     /**
-     * Do something when a key is pressed, releassed or clicked
+     * Do something when a key is pressed, released or clicked
      */
     //% blockId=OnKey
-    //% block="BitPlater: |on key $key| is $keyEvent"
+    //% block="BitPlayer: |on key $key| is $keyEvent"
     //% group="BitPlayer"
     //% weight=20 
     export function OnKey(key: BitPlayerKey, keyEvent: BitPlayerKeyEvent, handler: Action) {
@@ -309,10 +309,10 @@ namespace BitCar {
     }
 
     /**
-    * turn on of off the vibration motor
+    * turn on or off the vibration motor
     */
     //% blockId=SetMotor
-    //% block="BitPlater: |vibration $on|"
+    //% block="BitPlayer: |vibration $on|"
     //% on.shadow="toggleOnOff"
     //% on.defl="true"
     //% group="BitPlayer"
@@ -335,7 +335,7 @@ namespace BitCar {
     * @param position the current position of joystick
     */
     //% blockId=OnJoystick
-    //% block="BitPlater: |joystick $position|"
+    //% block="BitPlayer: |joystick $position|"
     //% position.fieldEditor="gridpicker"
     //% position.fieldOptions.columns=3
     //% group="BitPlayer"
@@ -400,7 +400,7 @@ namespace BitCar {
     * @param key the pin that acts as a button
     */
     //% blockId=KeyPressed
-    //% block="BitPlater: |key $key| is pressed"
+    //% block="BitPlayer: |key $key| is pressed"
     //% group="BitPlayer"
     //% weight=30 
     export function KeyPressed(key: BitPlayerKey): boolean {
