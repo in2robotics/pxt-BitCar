@@ -279,7 +279,7 @@ namespace BitCar {
         else return 350;
     }
 
-
+namespace BitPlayer {
     let posi_init = 0;
     function InitialPosition(): void {
         posi_init = 1;
@@ -307,6 +307,25 @@ namespace BitCar {
 
         init();
         control.onEvent(<number>key, <number>keyEvent, handler); // register handler
+    }
+
+
+    /**
+    * Get the key state (pressed or not)
+    * @param key the pin that acts as a button
+    */
+    //% blockId=KeyPressed
+    //% block="BitPlayer: |key $key| is pressed"
+    //% group="BitPlayer"
+    //% weight=30 
+    export function KeyPressed(key: BitPlayerKey): boolean {
+        if (!posi_init) {
+            InitialPosition();
+        }
+
+        const pin = <DigitalPin><number>key;
+        pins.setPull(pin, PinPullMode.PullUp);
+        return pins.digitalReadPin(<DigitalPin><number>key) == 0;
     }
 
 
@@ -397,21 +416,8 @@ namespace BitCar {
         }
     }
 
+ }
 
-    /**
-    * Get the key state (pressed or not)
-    * @param key the pin that acts as a button
-    */
-    //% blockId=KeyPressed
-    //% block="BitPlayer: |key $key| is pressed"
-    //% group="BitPlayer"
-    //% weight=30 
-    export function KeyPressed(key: BitPlayerKey): boolean {
-
-        const pin = <DigitalPin><number>key;
-        pins.setPull(pin, PinPullMode.PullUp);
-        return pins.digitalReadPin(<DigitalPin><number>key) == 0;
-    }
 
     
 }
