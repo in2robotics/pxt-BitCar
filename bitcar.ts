@@ -280,18 +280,36 @@ namespace BitCar {
     }
 
 
+    let posi_init = 0;
+    function InitialPosition(): void {
+        posi_init = 1;
+        return;
+    }
+	/**
+	 * 
+	 */
+    //% shim=bitplayer::init
+    function init(): void {
+        return;
+    }
 
     /**
      * Do something when a key is pressed, released or clicked
      */
     //% blockId=OnKey
-    //% block="BitPlayer: |on key $key| is $keyEvent"
+    //% block="on key $key| is $keyEvent"
     //% group="BitPlayer"
     //% weight=20 
     export function OnKey(key: BitPlayerKey, keyEvent: BitPlayerKeyEvent, handler: Action) {
+        if (!posi_init) {
+            InitialPosition();
+        }
 
+        init();
         control.onEvent(<number>key, <number>keyEvent, handler); // register handler
     }
+
+
 
     /**
     * turn on or off the vibration motor
