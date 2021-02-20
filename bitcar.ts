@@ -288,13 +288,6 @@ namespace BitCar {
         return;
     }
 
-	/**
-	 * 
-	 */
-    //% shim=bitplayer::init
-    function init(): void {
-        return;
-    }
 
     /**
      * Do something when a key is pressed, released or clicked
@@ -308,7 +301,6 @@ namespace BitCar {
             InitialPosition();
         }
 
-        init();
         control.onEvent(<number>key, <number>keyEvent, handler); // register handler
     }
 
