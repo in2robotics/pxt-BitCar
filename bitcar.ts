@@ -177,17 +177,21 @@ namespace BitCar {
     //% block="BitCar: line under $sensor|"
     //% group="BitCar"
     //% weight=700 
-    export function linesensor(sensor: IRLineSensor){
+    export function linesensor(sensor: IRLineSensor): boolean {
         let result = false;
 
         if (sensor == IRLineSensor.left) {
             if (pins.analogReadPin(AnalogPin.P1) < 500) {
                 result = true;
             }
+            else
+                return false;
         } else if (sensor == IRLineSensor.right) {
             if (pins.analogReadPin(AnalogPin.P2) < 500) { 
                 result = true;
             }
+            else
+                return false;
         }
     }
 
