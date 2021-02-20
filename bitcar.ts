@@ -280,15 +280,37 @@ namespace BitCar {
     }
 
 
-    let posi_init = 0;
+    
+ 
+
+
+
+    
+}
+
+
+
+
+
+
+
+/**
+ * Provides access to BitPlayer blocks for micro: bit functionality.
+ */
+//% color=190 icon="\uf126" block= "BitPlayer"
+//% groups="['BitPlayer']"
+namespace BitPlayer {
+let posi_init = 0;
+
     function InitialPosition(): void {
         posi_init = 1;
         return;
     }
+
 	/**
 	 * 
 	 */
-    //% shim=bitcar::init
+    //% shim=bitplayer::init
     function init(): void {
         return;
     }
@@ -415,9 +437,5 @@ namespace BitCar {
             return false;
         }
     }
- 
 
-
-
-    
 }
