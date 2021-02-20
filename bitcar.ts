@@ -279,7 +279,7 @@ namespace BitCar {
         else return 350;
     }
 
-namespace BitPlayer {
+
     let posi_init = 0;
     function InitialPosition(): void {
         posi_init = 1;
@@ -306,7 +306,7 @@ namespace BitPlayer {
         }
 
         init();
-        control.onEvent(<number>key, <number>keyEvent, handler); // register handler
+        controll.onEvent(<number>key, <number>keyEvent, handler); // register handler
     }
 
 
@@ -415,9 +415,9 @@ namespace BitPlayer {
             return false;
         }
     }
+ 
 
- }
-
+    
 
     
 }
