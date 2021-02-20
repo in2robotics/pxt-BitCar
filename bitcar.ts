@@ -311,7 +311,7 @@ export function OnKey(key: BitPlayerKey, keyEvent: BitPlayerKeyEvent, handler: A
         InitialPosition();
     }
 
-    init();
+
     control.onEvent(<number>key, <number>keyEvent, handler); // register handler
 }
 
