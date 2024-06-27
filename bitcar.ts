@@ -207,3 +207,7 @@ namespace BitCar {
         return distance;
     }
 }
+export function readsensor1 () {
+    sensorvalue1 = pins.analogReadPin(AnalogPin.P1);
+    return sensorvalue1;
+}
