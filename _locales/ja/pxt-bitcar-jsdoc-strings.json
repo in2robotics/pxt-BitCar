@@ -1,0 +1,10 @@
+{
+  "BitCar": "Bitcarのコントロールパネル.",
+  "BitCar.grove_ultrasonic": "超音波センサ（端子P12）で距離を測定し整数で返します2-350cm",
+  "BitCar.linefollow": "線を指示した速度で進みます",
+  "BitCar.linesensor": "ラインセンサ（フォトリフレクタ）で線を検出している時１を返し何も検出していない時は０を返します。",
+  "BitCar.move": "Bitcarのモーターの速度を決め進みます",
+  "BitCar.standup_still": "Bitcarを立ち上がらせます。上手くいかないときは値を変更",
+  "BitCar.stop": "BitCar を停止します",
+  "GrovePin": "***************************************************************************\r\n| Description :\tBitCar extension for micro:bit\r\n| Developer   :   CH Makered\r\n| More Info   :\thttp://chmakered.com/\r\n****************************************************************************"
+}
